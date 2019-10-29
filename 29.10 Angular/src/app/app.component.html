@@ -1,0 +1,39 @@
+<h1>Search</h1>
+<input type="text" (input)="input($event)">
+<button (click)="show()"> Search</button>
+<h3>{{valueToSend}}</h3>
+
+<br>
+
+<button (click)="renderLogin()">Login</button>
+<button (click)="renderRegister()">Register</button>
+
+<div *ngIf="visabilityLogin" class="borders">
+  <p>Please write down your email and password</p>
+  <input type="text" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Submit">
+</div>
+
+<div *ngIf="visabilityRegister" class="borders">
+  <p>Create your own account</p>
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Submit">
+</div>
+
+<br>
+
+<div *ngFor="let flat of flats" class="background, borders">
+  City: {{flat.city}}
+  <br>
+  Price: {{flat.price}}
+  <br>
+  Squere metres: {{flat.sqM}}
+  <br>
+</div>
+
+
+
+
